@@ -23,7 +23,7 @@ class Show < ActiveRecord::Base
   
   def self.popular_shows
     binding.pry
-    show = Show.order(rating: :asc).limit(1)
+    show = Show.where("rating > '5'")
   end
   
   # def shows_by_alphabetical_order
